@@ -1,0 +1,283 @@
+/* === Partie Principale === */
+
+body
+    {
+    overflow-y: scroll; /* Show vertical scrollbar */
+
+    color: #f3e6d0;
+    background-color:#000000;
+    font-family: palatino linotype;
+    background-image:url(../img/v_fond.png);
+    background-repeat:repeat-x;
+    background-attachment: fixed;
+
+    height: 100%;
+    margin: 0;
+
+    /* Pour IE : */
+    margin:0px auto;
+    text-align: center;
+    }
+#pics_bg_barb
+    {
+    background-image:url(../img/b_fond.png);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position:left 417px;
+    
+    min-height: 800px;
+    height:auto !important;
+    height:800px;
+    }
+#pics_bg_civ
+    {
+    background-image:url(../img/c_fond.png);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position:right 349px;
+    
+    min-height: 800px;
+    height:auto !important;
+    height:800px;
+    }
+#page
+    {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+
+    width: 900px;
+    padding:15px;
+    background-color:#000000;
+    background-color:rgba(0, 0, 0, 0.5);
+    
+    /* Pour IE : */
+    margin:0px auto;
+    text-align:left;
+    }
+
+/* --- Element mis en forme commun a tout le site --- */
+body a img {border:  none ; }
+
+h2{ color: #D5B982; text-align:center; }
+h3{ color: #D5B982; text-align:center; }
+h4{ color: #D5B982; text-align:center; }
+
+a { color: #f3e6d0; text-decoration: underline; font-weight: bold; }
+
+a:hover{ color: #FFFFFF;     cursor: pointer;}
+
+/* Pour element type barre de menu, etc. */
+.body_item
+    {
+    border-top: solid 4px #D5B982;
+    border-bottom: solid 4px #D5B982;
+    text-align: center;
+    padding:5px;
+    }
+div .pg1
+    {
+    clear:both;
+    margin:10px; padding:10px;
+    }       
+button 
+    {
+    background-color:#000000;
+    border: 1px solid #D5B982;
+    color:  #D5B982;
+    padding: 12px 12px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    width:150px;
+    font-weight: bold; 
+    border-radius: 12px;
+    }
+
+button:hover 
+    {
+    background-color:#D5B982;
+    border: 1px solid #000000;
+    color:  #000000;
+    }    
+
+/* === Partie Header === */
+
+#header
+    {
+    flex: 0 1 auto;
+    padding: 10px;
+    overflow : hidden;
+    }
+
+#header img.logo /* le logo, flottant dans la gauche du header */
+    {
+    float:left; 
+    height: 70px;
+    }   
+    
+#title_header       /* un titre, flottant dans la droite du header. */
+    {
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    float:right;
+    margin-top:50px; margin-right:0px;
+    text-align : right;
+    }   
+
+/* === Partie Centrale (Main) === */
+#main
+    {
+    /* border: 3px solid red; */
+    /* height:auto !important; */
+    min-height: 500px;
+    padding: 40px;
+    flex: 1 1 auto;
+    }
+#main_p
+    {
+    /* border: 3px solid blue; */
+    /* margin-top:64px;
+    margin-bottom:164px; */
+    }  
+  
+/* === Partie Footer === */
+#footer
+    {
+    flex: 0 1;
+    /* margin-top: 50px; */
+    /* border-top: solid 4px #D5B982;
+    border-bottom: solid 4px #D5B982; */
+    text-align: center;
+    /* padding:5px; */
+    font-style:italic;
+    }
+
+#flags 
+    {
+    width : 76px;
+    float:right; 
+    margin-left: -76px;
+    }
+
+img.flag 
+    {
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 1px solid black;
+    } 
+
+img.flag:hover
+    {
+    border: 1px solid white;
+    }  
+
+
+
+/* === Page de presentation === */
+
+#presentation
+    {
+    /* min-height:200%; */
+    /* border:2px solid red; */
+    text-align:justify;
+    }
+    
+ 
+
+.img_float_left
+    {
+    float:left;
+    /* border:1px solid violet; */
+    }   
+.img_float_right
+    {
+    float:right;
+    /* border:1px solid violet; */
+    }       
+
+.img_cadre
+    {
+    margin:5px;
+    padding:5px;
+    border:1px solid black;
+    background: white;
+    color:black;
+    }
+.img_cadre.i500 { width:500px; }
+.img_cadre.i320 { width:320px; }
+    
+/* === Page de Connection/Compte === */
+#main_p form 
+    {
+    /* border: 1px solid red;*/
+    text-align: center;
+    }
+
+/* === Page de mondes === */
+
+table#wtable {
+  width: 100%;
+    border: 1px solid;
+     border-collapse: collapse;
+}
+#wtable td, #customers th {
+/* border: 1px solid #ddd;  */
+  padding: 8px;
+  text-align: center;
+}
+
+#wtable tr{
+    background:  rgba(180, 180, 180, 0.3);
+    border-bottom: 1px solid #444444; 
+}
+
+#wtable td.status{
+    width: 64px;
+    text-align: center;
+    margin-left: 24px;
+}
+
+#wtable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #444444;
+  color: #D5B982;
+  text-align: center;
+}
+
+img.status 
+    {
+    width : 16px;
+    height : 16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    } 
+
+button.world { width:150px; }
+
+button.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+} 
+
+.nbplayer {
+    font-size: 0.8em;
+}
+
+
+/*--- A RANGER  : ---*/
+
+
+.ERREUR{ margin:15px; color: #FF8888; font-weight:bold; text-align:center; 
+}
+.SUCCES{ margin:15px; color: #88FF88; font-weight:bold; text-align:center; }
+
+
+
