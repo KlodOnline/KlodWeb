@@ -10,7 +10,7 @@
 ## Purpose
 "KlodWeb" is the main portal to access the game. It manages player account, subscriptions, fees, and connections to world servers. It suppose to have a minimalistic interface, in English & French (and later, Spanish & Chinese) to register and discover some basics about the game. It should have a video to present the project, and a link to a Wiki to understand the game.
 ## Setup
-This how you can setup a "KlodWeb" Server to test it on you own homelab :
+This is how you can setup a "KlodWeb" Server to test it on your own homelab :
   - Have a LAMP (either a VM, a CT, or baremetal)
   - Upload sources in /var/klodweb/
   - Go to /var/klodweb/setup
