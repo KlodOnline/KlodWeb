@@ -1,13 +1,25 @@
 # KlodWeb
+
 ## General Policies
-  - This is not a democracy. This project is my vision of what an MMO-Strategy game should be, any people who share the vision is welcome, any suggestion is welcome, but the final word is mine.
-  - Please READ & USE https://www.conventionalcommits.org/en/v1.0.0/
-  - English is the main language of the project, to allow peoples from all over the world to participate
-## To Do List
-  - Add a README in _setup_ folder to explain how to setup a web portal 
-  - Make code easier to read & work as a team
-  - Check security of the whole authentication process
+
+- This is not a democracy. This project reflects *my* vision of what an MMO strategy game should be. Everyone who shares that vision is welcome. Suggestions are always appreciated, but the final decision is mine.
+- Please **read and follow** the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+- English is the main language of the project to enable contributions from people around the world.
+
+## To-Do List
+
+- Add a README in the `setup` folder to explain how to deploy the web portal
+- Refactor code for better readability and easier collaboration
+- Audit and improve the security of the entire authentication process
+
 ## Purpose
-"KlodWeb" is the main portal to access the game. It manages player account, subscriptions, fees, and connections to world servers. It suppose to have a minimalistic interface, in English & French (and later, Spanish & Chinese) to register and discover some basics about the game. It should have a video to present the project, and a link to a Wiki to understand the game.
+
+**KlodWeb** is the main entry point to access the game. It handles player accounts, subscriptions, payments, and connections to world servers.
+
+It is intended to have a minimalistic interface, available in English and French (later: Spanish and Chinese), allowing users to register and get a basic introduction to the game. It will also include:
+- A video to present the project
+- A link to a Wiki for gameplay details
+
 ## Setup
-See *README.md* in the *setup* folder.
+
+See the `README.md` file in the [`setup`](./setup) folder for installation instructions.
