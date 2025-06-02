@@ -22,4 +22,5 @@ To deploy a **KlodWeb** server on your homelab:
 3. Navigate to the `/var/klodweb/setup` directory.
 4. If needed, edit the Manual variables section in `install.sh`.
 5. Run `setup.sh` with root privileges.
+
 Your server should now be accessible at: `https://<your-ip-or-domain>:443`
