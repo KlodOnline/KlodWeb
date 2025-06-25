@@ -29,6 +29,15 @@ apt-get install -y php-curl
 echo ">>> End of requisites installations."
 
 # ================================================
+#   Launch daemons
+# ================================================
+
+service apache2 start
+service mariadb start
+
+echo ">>> All daemons started."
+
+# ================================================
 #   MariaDB Configuration
 # ================================================
 
@@ -68,7 +77,7 @@ for site in /etc/apache2/sites-enabled/*; do
 done
 
 # Activer le module SSL si ce n'est pas dejà fait
-sudo a2enmod ssl > /dev/null 2>&1
+a2enmod ssl > /dev/null 2>&1
 
 # Creer la configuration pour klodgame
 echo "<VirtualHost *:443>
@@ -90,7 +99,7 @@ echo "<VirtualHost *:443>
 </VirtualHost>" > /etc/apache2/sites-available/$APACHE_SITE.conf
 
 a2ensite $APACHE_SITE
-service apache2 reload
+service apache2 restart
 
 echo ">>> End of Apache configuration."
 
