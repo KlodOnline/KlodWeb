@@ -1,5 +1,5 @@
 # KlodWeb
-
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/KlodOnline/KlodWeb)
 ## General Policies
 
 - This is not a democracy. This project reflects *my* vision of what an MMO strategy game should be. Everyone who shares that vision is welcome. Suggestions are always appreciated, but the final decision is mine.
