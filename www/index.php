@@ -60,7 +60,9 @@ https://dev.to/adrai/the-progressive-guide-to-jquery-internationalization-i18n-u
 
 			<div id="flags">
 				<a id="fr" class="lang"><img class="flag" src="./img/fr_flag.png"></a>
-				<a id="en" class="lang"><img class="flag" src="./img/eng_flag.png"></a>
+				<a id="en" class="lang"><img class="flag" src="./img/en_flag.png"></a>
+				<a id="es" class="lang"><img class="flag" src="./img/es_flag.png"></a>
+				<a id="zh" class="lang"><img class="flag" src="./img/zh_flag.png"></a>
 			</div>
 
 		</div></div>
