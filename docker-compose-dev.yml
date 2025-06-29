@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb:11.4
+    image: mariadb:latest
     container_name: klodweb-db
     restart: always
     environment:
@@ -14,17 +14,28 @@ services:
     networks:
       - klodweb-net
 
-  web:
-    build: .
-    container_name: klodweb-www
-    ports:
-      - "1443:443"
-    volumes:
-      - ./www:/var/www/html
+  php:
+    image: bitnami/php-fpm:latest
+    container_name: klodweb-php
+    volumes: 
+    - ./www:/app 
     depends_on:
       - db
     networks:
       - klodweb-net
+
+  apache:
+    image: bitnami/apache:latest
+    container_name: klodweb-apache
+    ports:
+      - "1443:8443"
+    depends_on:
+      - php
+    networks:
+      - klodweb-net
+    volumes:
+      - ./www:/app 
+      - ./setup/apache.conf:/vhosts/klodweb.conf:ro
 
 volumes:
   db_data:

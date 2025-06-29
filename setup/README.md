@@ -9,17 +9,27 @@ This folder contains some of the scripts and tools needed to automate the instal
  - If you use Docker Desktop, allow the KlodWeb folder to be shared with the container :
     `Settings > Resources > File sharing > [Add you KlodWeb path]`
  - `cd KlodWeb`
- - `docker compose up -d` (will create the whole stack)
-Your server should now be accessible at: `https://127.0.01:443`.
+ - `make up` (will create the whole stack)
+Your server should now be accessible at: `https://127.0.0.1:1443`.
 For some reasons, you may have a "Fatal error: Uncaught mysqli_sql_exception: Connection refused" (or equivalent).
 Just wait a bit and try again, your containers are not up at the same time.
-To have an interactive session inside you web container, do: `docker exec -it klodweb-www bash`.
-To have an interactive session inside you db container, do: `docker exec -it klodweb-db bash`.
-If you need to rebuild the whole stack, do :
-- `docker compose down`
-- `docker volume rm klodweb_db_data`
-- `docker compose build --no-cache`
-- `docker compose up -d`
+To have an interactive session inside the following containers :
+   - db -> `make sh-db`
+   - php -> `make sh-php`
+   - apache -> `make sh-apache`
+
+If you need to connect to the database from inside the container, run:
+- `make sh-db`
+- Then, inside the container: `mariadb -p`
+- Enter the root password defined in your `docker-compose-dev.yml` (`rootpass` by default).
+
+If you need to clean the database, do :
+- `make clean-db`
+
+Other useful commands:
+- `make ps`    # Show the status of all containers
+- `make logs`   # Follow the logs of all containers
+- `make down`   # Stop and remove all containers
 
 ## How-To (for Production)
 Work in progress.
