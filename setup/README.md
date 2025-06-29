@@ -4,24 +4,22 @@ This folder contains some of the scripts and tools needed to automate the instal
 
 ## How-To (for Dev)
 ### The Docker Way
+ - Navigate to your own projects folder
  - `git clone --branch develop https://github.com/KlodOnline/KlodWeb.git`
  - `cd KlodWeb`
  - `make build`
  - `make run`
-Your server should now be accessible at: `https://127.0.01:443`
-To have an interactive session inside you container, do: `docker exec -it klodweb /bin/bash`
+Your server should now be accessible at: `https://127.0.01:443`.
+To have an interactive session inside you container, do: `docker exec -it klodweb /bin/bash`.
+Use `docker start|stop klodweb` to ... well I hope you understood.
 
-### The Other way
-#### Requirements
+## How-To (for Production)
+### Requirements
 - A working LAMP environment (Linux + Apache + MySQL + PHP)
 - Root access to install and configure services
-
-#### How-to
-To deploy a **KlodWeb** server on your homelab:
-1. Set up a LAMP environment (can be a VM, container, or bare-metal).
-2. Copy the source files to `/var/klodweb/`.
-3. Navigate to the `/var/klodweb/setup` directory.
-4. If needed, edit the Manual variables section in `install.sh`.
-5. Run `setup.sh` with root privileges.
-
-Your server should now be accessible at: `https://<your-ip-or-domain>:443`
+### How-to
+ - navigate to `/var`
+ - execute `git clone --branch main https://github.com/KlodOnline/KlodWeb.git`
+ - execute `/var/klodweb/setup/install.sh` installation script
+ - (todo) execute the `/var/klodweb/setup/prod_cleaner.sh` script
+Your server should now be accessible at: `https://www.klodonline.com:443`.
