@@ -1,5 +1,3 @@
-CREATE SCHEMA klodwebsite;
-
 CREATE TABLE klodwebsite.player ( 
 	id                   INT  NOT NULL  AUTO_INCREMENT  PRIMARY KEY,
 	name                 VARCHAR(100)   DEFAULT (NULL)   ,
