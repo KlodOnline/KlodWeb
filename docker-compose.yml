@@ -1,0 +1,33 @@
+services:
+  db:
+    image: mariadb:11.4
+    container_name: klodweb-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: klodwebsite
+      MYSQL_USER: klodadmin
+      MYSQL_PASSWORD: Pw3Lqb6fuLspT7IrYp
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./setup/website.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - klodweb-net
+
+  web:
+    build: .
+    container_name: klodweb-www
+    ports:
+      - "1443:443"
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - klodweb-net
+
+volumes:
+  db_data:
+
+networks:
+  klodweb-net:

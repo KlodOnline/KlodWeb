@@ -4,7 +4,6 @@
 # ================================================
 BASE_DIR="/var/klodweb/www"
 APACHE_SITE="ssl-klodweb"
-# APACHE_CONF_FILE="/etc/apache2/sites-available/ssl-klodweb.conf"
 
 # BDD INFO
 # Password is self generated if omitted.
@@ -13,61 +12,6 @@ DB_HOST="localhost"
 DB_USER="klodadmin"
 DB_PASS='Pw3Lqb6fuLspT7IrYp'
 DB_NAME="klodwebsite"
-
-# Generate a password if undefined before
-DB_PASS="${DB_PASS:=$(openssl rand -base64 12)}"
-
-# ================================================
-#   Requisites installation
-# ================================================
-apt-get update
-# Basic LAMP Stack
-apt-get install mariadb-server apache2 php php-mysqli -y
-# Additionals php modules 
-apt-get install -y php-curl
-
-echo ">>> End of requisites installations."
-
-# ================================================
-#   Launch daemons
-# ================================================
-
-service apache2 start
-service mariadb start
-
-echo ">>> All daemons started."
-
-# ================================================
-#   MariaDB Configuration
-# ================================================
-
-# Import SQL File (should be up to date)
-mysql < website.sql
-
-# User creation
-mysql -h "$DB_HOST" -e "CREATE USER IF NOT EXISTS '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASS';"
-
-if [ $? -eq 0 ]; then
-    echo "L'utilisateur $DB_USER a ete cree avec succes."
-else
-    echo "echec de la creation de l'utilisateur $DB_USER."
-    exit 1
-fi
-
-# User right attribution
-mysql -h "$DB_HOST" -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost';"
-
-if [ $? -eq 0 ]; then
-    echo "Les privileges ont ete accordes a $DB_USER sur la base de donnees $DB_NAME."
-else
-    echo "echec de l'attribution des privileges a $DB_USER."
-    exit 1
-fi
-
-# Refresh privileges
-mysql -h "$DB_HOST" -e "FLUSH PRIVILEGES;"
-
-echo ">>> End of MariaDB configuration."
 
 # ================================================
 #	Apache Configuration
@@ -99,7 +43,6 @@ echo "<VirtualHost *:443>
 </VirtualHost>" > /etc/apache2/sites-available/$APACHE_SITE.conf
 
 a2ensite $APACHE_SITE
-service apache2 restart
 
 echo ">>> End of Apache configuration."
 

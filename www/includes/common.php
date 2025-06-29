@@ -21,7 +21,7 @@ include_once __DIR__.'/helpers.php';
 if (isset($_REQUEST['_SESSION'])) die("...");
 
 //===================== VARIABLES AUTHENTIFICATION =============================
-define('DB_HOST', 'localhost'); // serveur mysql
+define('DB_HOST', 'db'); // serveur mysql
 define('DB_USER', 'klodadmin'); // nom d'utilisateur
 define('DB_PASS', 'Pw3Lqb6fuLspT7IrYp'); // mot de passe
 define('DB_NAME', 'klodwebsite'); // nom de la base
