@@ -1,21 +1,22 @@
 # Setup
 
-This folder contains the scripts and tools needed to automate the installation of a _KlodWeb_ server.
+This folder contains some of the scripts and tools needed to automate the installation of a _KlodWeb_ server.
 
-## To-Do List
+## How-To (for Dev)
+### The Docker Way
+ - `git clone --branch develop https://github.com/KlodOnline/KlodWeb.git`
+ - `cd KlodWeb`
+ - `make build`
+ - `make run`
+Your server should now be accessible at: `https://127.0.01:443`
+To have an interactive session inside you container, do: `docker exec -it klodweb /bin/bash`
 
-  - `setup.sh` actually add daemons the "old way" because of Docker images (files in `/etc/init.d` and usage with `service [name] start|stop` etc.) The script should detect if we have **systemctl** available or not and behave properly according to.
-
-## Usage
-
-### Requirements
-
+### The Other way
+#### Requirements
 - A working LAMP environment (Linux + Apache + MySQL + PHP)
-  - Can be a virtual machine, container (CT), or bare-metal server
 - Root access to install and configure services
 
-### How-to
-
+#### How-to
 To deploy a **KlodWeb** server on your homelab:
 1. Set up a LAMP environment (can be a VM, container, or bare-metal).
 2. Copy the source files to `/var/klodweb/`.
