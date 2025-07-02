@@ -3,15 +3,15 @@
 $data['username'] = '';
 $data['mail'] = '';
 
-include_once '../includes/form_manager.php'; 
+include_once '../includes/form_manager.php';
 
-if ($_SESSION['id']!=0) {
-	
-	echo '<p><div class="ERREUR trn">';
-	echo '__ALREADYREGISTRED__';
+if ($_SESSION['id'] != 0) {
+
+    echo '<p><div class="ERREUR trn">';
+    echo '__ALREADYREGISTRED__';
     echo '</div></p>';
 
-	exit();
+    exit();
 }
 
 ?>
@@ -58,10 +58,11 @@ if ($_SESSION['id']!=0) {
 
 
 <?php
-if(!empty($err))
-    {
+if (!empty($err)) {
     echo '<p><div class="ERREUR">';
-    foreach ($err as $e) { echo '<span class="trn">'.$e.'</span><br/>'; }
-    echo '</div></p>';
+    foreach ($err as $e) {
+        echo '<span class="trn">'.$e.'</span><br/>';
     }
+    echo '</div></p>';
+}
 ?>

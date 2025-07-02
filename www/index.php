@@ -1,5 +1,5 @@
 <?php
-	include_once './includes/common.php'; 
+include_once './includes/common.php';
 //	$session->change_page('');
 
 /*
@@ -46,10 +46,12 @@ https://dev.to/adrai/the-progressive-guide-to-jquery-internationalization-i18n-u
 
 	        <div id="main">
 				<?php
-	        		include_once './pages/presentation.php'; 
-	        		
-	        		if ($session->id()!=0) { echo '<script>ChangeLoginMenu("'.$session->name().'")</script>'; }
-				?>
+                    include_once './pages/presentation.php';
+
+if ($session->id() != 0) {
+    echo '<script>ChangeLoginMenu("'.$session->name().'")</script>';
+}
+?>
 			</div>
 
 
