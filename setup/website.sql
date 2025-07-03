@@ -14,3 +14,7 @@ CREATE TABLE klodwebsite.world (
 	address              VARCHAR(255)   DEFAULT (NULL)   ,
 	demo                 VARCHAR(100)   DEFAULT (NULL)   
  ) engine=InnoDB;
+
+-- Inserting a local test world
+INSERT INTO klodwebsite.world (name, address, demo)
+VALUES ('DefaultWorld', 'https://127.0.0.1:2443', 'true');
