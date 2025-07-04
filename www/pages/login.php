@@ -1,5 +1,5 @@
 <?php
-	include_once '../includes/form_manager.php'; 
+include_once '../includes/form_manager.php';
 ?>
 
 	<div id="main_p">
@@ -25,10 +25,11 @@
 
 
 <?php
-	if(!empty($err))
-	    {
-	    echo '<p><div class="ERREUR">';
-	    foreach ($err as $e) { echo '<span class="trn">'.$e.'</span><br/>'; }
-	    echo '</div></p>';
-	    }
+    if (!empty($err)) {
+        echo '<p><div class="ERREUR">';
+        foreach ($err as $e) {
+            echo '<span class="trn">'.$e.'</span><br/>';
+        }
+        echo '</div></p>';
+    }
 ?>

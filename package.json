@@ -5,6 +5,14 @@
     "husky": "^9.1.7"
   },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint-js": "sh ./run-eslint.sh",
+    "lint-php": "sh ./run-phpcsfixer.sh",
+    "lint": "make lint"
+  },
+  "dependencies": {
+    "eslint": "^9.30.1",
+    "package.json": "^2.0.1",
+    "prettier": "^3.6.2"
   }
 }

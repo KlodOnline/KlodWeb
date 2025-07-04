@@ -1,11 +1,10 @@
 <?php
-include_once '../includes/form_manager.php'; 
+include_once '../includes/form_manager.php';
 
-if($_SESSION['id']!=0) 
-	{
-	$player_manager = new player_manager();
-	$player = $player_manager->read($_SESSION['id']);
-?>
+if ($_SESSION['id'] != 0) {
+    $player_manager = new player_manager();
+    $player = $player_manager->read($_SESSION['id']);
+    ?>
 
 <div id="main_p">
 	<h2 class="trn">__ACCOUNTDETAILS__</h2>
@@ -32,14 +31,14 @@ if($_SESSION['id']!=0)
 
 		<center>
 				<span class="trn">__FEESTATUS__</span> :<br/>
-					<?php 
-						if ($player->fee_status()==true) {
-							echo '<span class="SUCCES trn">'.$player->expiracy_date().'</span>';
-						} else  {
-							echo '<span class="ERREUR trn">__EXPIRED__</span><br/>';
-							echo '<i><span class="trn">__NOWORRIESDEMO__</span></i>';
-						}
-					?>
+					<?php
+                            if ($player->fee_status() == true) {
+                                echo '<span class="SUCCES trn">'.$player->expiracy_date().'</span>';
+                            } else {
+                                echo '<span class="ERREUR trn">__EXPIRED__</span><br/>';
+                                echo '<i><span class="trn">__NOWORRIESDEMO__</span></i>';
+                            }
+    ?>
 				</center>
 		<br/>
 
@@ -68,15 +67,16 @@ if($_SESSION['id']!=0)
 
 <?php
 
-if(!empty($err))
-    {
+if (!empty($err)) {
     echo '<p><div class="ERREUR">';
-    foreach ($err as $e) { echo '<span class="trn">'.$e.'</span><br/>'; }
-    echo '</div></p>';
+    foreach ($err as $e) {
+        echo '<span class="trn">'.$e.'</span><br/>';
     }
+    echo '</div></p>';
+}
 
-} else  {
-	// On reroute vers la page de login :
-	include_once './login.php'; 
-	}
+} else {
+    // On reroute vers la page de login :
+    include_once './login.php';
+}
 ?>

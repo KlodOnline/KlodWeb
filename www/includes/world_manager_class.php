@@ -1,6 +1,5 @@
 <?php
-class world_manager extends bdd_io
-    {
 
-    }        
-?>
+class world_manager extends bdd_io
+{
+}
